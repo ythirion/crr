@@ -1,6 +1,6 @@
 # Test it or Die Trying (35')
-- The test project `UnitTestsIntro.Tests` already contains `xUnit` package reference 
-- `xUnit` documentation is available [here](https://xunit.net/)
+- The test project `UnitTestsIntro.Tests` already contains `NUnit` package reference 
+- `NUnit` documentation is available [here](https://nunit.org/)
 
 ## Calculator
 - Write a few tests on the `Calculator` class
@@ -32,7 +32,7 @@ public class Calculator
 
 > You are not allowed to change production code
 
-Step-by-step solution is available [here](../solutions/c%23/step-by-step.md)
+Step-by-step solution is available [here](../solution/step-by-step.md)
 
 ## TimeUtility
 - Write at least one test for it

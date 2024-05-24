@@ -99,8 +99,8 @@ public void FailWhenOperatorNotSupported()
 - Let's remove duplication
   - assertion code is duplicated
   - we instantiate 1 `Calculator` per test, but we can use the same (no state inside)
-- In `xUnit` for this kind of test we can use `Parameterized tests`
-  - We define a `[Theory]` method that takes some data as input `[InlineData]`
+- In `NUnit` for this kind of test we can use `Parameterized tests`
+  - We define `TestCases`
   - We adapt the test method as well `public void SupportOperations(int a, int b, string @operator, int expectedResult)`
 - We can use a library that simplify assertion readability as well called [FluentAssertions](https://fluentassertions.com/)
 

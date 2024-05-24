@@ -94,7 +94,7 @@ In small groups, categorize each sentence about Unit tests in :
 > Unit Testing is not a secondary activity, it’s the primary one of a good developer !!!
 
 ## Concrete Practice - Test it or Die Trying (60')
-- [C# solution](c%23/how-to.md)
+- Exercise available [here](c%23/how-to.md)
 
 ## Conclusion - Back to the questions (10')
 Come back to the facts and questions:

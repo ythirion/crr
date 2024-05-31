@@ -80,6 +80,10 @@ We replace a component on which the SUT depends with a `test-specific equivalent
 addition of previously mentioned characteristics.
 > There are variations in types of Test Doubles depending on their intent
 
+### Test Desiderata
+[![Test Desiderata](img/test-desiderata.png)](https://kentbeck.github.io/TestDesiderata/)
+
+## Concepts - Test Doubles
 ### Dummy
 
 > We pass an object that has no implementation as an argument of a method called on the SUT.

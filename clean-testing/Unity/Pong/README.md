@@ -15,3 +15,14 @@ In this repo, I share a simple copy of the famous Pong game with a bunch of C# u
 *For more info, check out the article [on Codemagic](https://blog.codemagic.io/unit-testing-automation-unity/)!*
 
 ![demo](Refs/demo.gif)
+
+## Run the tests
+```shell
+sudo /Applications/Unity/Hub/Editor/2022.3.26f1/Unity.app/Contents/MacOS/Unity -batchmode -executeMethod Runner.RunUnitTests -logFile -nographics -projectPath . -testsOutput tests.xml
+```
+
+How to use [`code coverage`](https://docs.unity3d.com/Packages/com.unity.testtools.codecoverage@0.2/manual/UsingCodeCoverage.html#using-code-coverage-in-batchmode).
+
+```shell
+sudo /Applications/Unity/Hub/Editor/2022.3.26f1/Unity.app/Contents/MacOS/Unity -batchmode -executeMethod Runner.RunUnitTests -logFile -nographics -projectPath . -testsOutput tests.xml -enableCodeCoverage -coverageOptions generateHtmlReport;
+```

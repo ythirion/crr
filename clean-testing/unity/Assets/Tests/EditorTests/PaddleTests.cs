@@ -7,6 +7,7 @@ using Pong;
 
 namespace EditorTests
 {
+
     public class PaddleTests
     {
         private GameHandler _handler = new GameHandler();
@@ -140,5 +141,8 @@ namespace EditorTests
             // reset timeScale
             Time.timeScale = 1f;
         }
+
+
     }
+
 }

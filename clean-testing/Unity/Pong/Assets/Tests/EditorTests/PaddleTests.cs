@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.TestTools;
 
 using Pong;
+using static System.IO.Directory;
+using static System.IO.Path;
 
 namespace EditorTests
 {
@@ -64,7 +66,7 @@ namespace EditorTests
             }
 
             Assert.Greater(left.transform.position.y, startY);
-
+            
             // reset timeScale
             Time.timeScale = 1f;
         }
@@ -136,13 +138,20 @@ namespace EditorTests
                 yield return null;
             }
 
+            SaveScreenshot("PaddleMoveUp.png");
             Assert.GreaterOrEqual(left.transform.position.y, -4f);
 
             // reset timeScale
             Time.timeScale = 1f;
         }
 
-
+        private static void SaveScreenshot(string fileName)
+        {
+            const string folderPath = "tmp";
+            if (!Exists(folderPath)) CreateDirectory(folderPath);
+            
+            ScreenCapture.CaptureScreenshot(Combine(folderPath, fileName));
+        }
     }
 
 }

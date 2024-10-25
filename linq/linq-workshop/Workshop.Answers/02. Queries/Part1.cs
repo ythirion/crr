@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
-using Workshop.Tests._01._Fundamentals.Data;
-using static Workshop.Tests._01._Fundamentals.Data.Persons;
+using Workshop.Answers._02._Queries.Data;
+using static Workshop.Answers._02._Queries.Data.Persons;
 
-namespace Workshop.Tests._02._Queries
+namespace Workshop.Answers._02._Queries
 {
     public class Part1
     {
@@ -13,7 +13,8 @@ namespace Workshop.Tests._02._Queries
         public void GetFirstNamesOfAllPeopleWithMethodSyntax()
         {
             // Replace it, with a transformation method on people.
-            List<string> firstNames = [];
+            var firstNames = People
+                .Select(p => p.FirstName);
 
             CollectionAssert.AreEquivalent(
                 (List<string>) ["Mary", "Bob", "Ted", "Jake", "Barry", "Terry", "Harry", "John"],
@@ -25,7 +26,9 @@ namespace Workshop.Tests._02._Queries
         public void GetFirstNamesOfAllPeopleWithQuerySyntax()
         {
             // Replace it, with a transformation method on people.
-            List<string> firstNames = [];
+            var firstNames =
+                from p in People
+                select p.FirstName;
 
             CollectionAssert.AreEquivalent(
                 (List<string>) ["Mary", "Bob", "Ted", "Jake", "Barry", "Terry", "Harry", "John"],
@@ -37,9 +40,7 @@ namespace Workshop.Tests._02._Queries
         public void GetNamesOfMarySmithsPets()
         {
             var person = GetPersonNamed("Mary Smith");
-
-            // Replace it, with a transformation method on people.
-            var names = new List<string>();
+            var names = person.Pets.Select(p => p.Name);
 
             Assert.AreEqual("Tabby", names.Single());
         }
@@ -48,25 +49,36 @@ namespace Workshop.Tests._02._Queries
         public void GetPeopleWithCats()
         {
             // Replace it, with a positive filtering method on people.
-            var peopleWithCats = new List<string>();
+            var peopleWithCats =
+                People
+                    .Where(p => p.Pets.Any(pet => pet.Type == PetType.Cat))
+                    .Select(p => p.FirstName);
 
-            Assert.AreEqual(2, peopleWithCats.Count);
+            /*
+             * from p in People
+               where p.Pets.Any(pet => pet.Type == PetType.Cat)
+               select p.FirstName;
+             */
+
+            Assert.AreEqual(2, peopleWithCats.Count());
         }
 
         [Test]
         public void GetPeopleWithoutCats()
         {
             // Replace it, with a negative filtering method on List.
-            var peopleWithoutCats = new List<string>();
+            var peopleWithoutCats = People
+                .Where(p => p.Pets.All(pet => pet.Type != PetType.Cat))
+                .Select(p => p.FirstName);
 
-            Assert.AreEqual(6, peopleWithoutCats.Count);
+            Assert.AreEqual(6, peopleWithoutCats.Count());
         }
 
         [Test]
         public void DoAnyPeopleHaveCats()
         {
             //replace null with a Predicate lambda which checks for PetType.CAT
-            var doAnyPeopleHaveCats = false;
+            var doAnyPeopleHaveCats = People.Any(p => p.Pets.Any(pet => pet.Type == PetType.Cat));
 
             Assert.IsTrue(doAnyPeopleHaveCats);
         }
@@ -74,8 +86,8 @@ namespace Workshop.Tests._02._Queries
         [Test]
         public void DoAllPeopleHavePets()
         {
-            Predicate<Person> predicate = p => true;
-            // replace with a method call send to people that checks if all people have pets
+            Predicate<Person> predicate = p => p.Pets.Any();
+            // replace with a method call send to this.people that checks if all people have pets
             var result = People.TrueForAll(predicate);
 
             Assert.IsFalse(result);
@@ -85,14 +97,16 @@ namespace Workshop.Tests._02._Queries
         public void HowManyPeopleHaveCats()
         {
             // replace 0 with the correct answer
-            var count = 0;
+            var count = People.Count(p => p.Pets.Any(pet => pet.Type == PetType.Cat));
             Assert.AreEqual(2, count);
         }
 
         [Test]
         public void FindMarySmith()
         {
-            Person result = null;
+            // Throws an exception if no match is found
+            // Favor find or SingleOrDefault over Single
+            var result = People.Single(p => p.FirstName == "Mary" && p.LastName == "Smith");
 
             Assert.AreEqual("Mary", result.FirstName);
             Assert.AreEqual("Smith", result.LastName);
@@ -102,7 +116,7 @@ namespace Workshop.Tests._02._Queries
         public void GetPeopleWithPets()
         {
             // replace with only the pets owners
-            var petPeople = 0;
+            var petPeople = People.Count(p => p.Pets.Any());
 
             Assert.AreEqual(7, petPeople);
         }

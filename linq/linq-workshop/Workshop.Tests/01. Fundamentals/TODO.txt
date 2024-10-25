@@ -1,0 +1,4 @@
+- Extension methods for int / string / etc.
+- Extension methods for IEnumerable<T> / IQueryable<T> / etc.
+- One Liner LinQ expressions
+- Pattern Matching

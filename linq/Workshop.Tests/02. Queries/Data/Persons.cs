@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Workshop.Tests._01._Fundamentals.Data
+namespace Workshop.Tests._02._Queries.Data
 {
     public static class Persons
     {

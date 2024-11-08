@@ -1,4 +1,4 @@
-namespace Workshop.Tests._03._Real_World.Watch;
+namespace Workshop.Answers._03._Real_World.Watch;
 
 public enum ComponentType
 {

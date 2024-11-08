@@ -1,4 +1,4 @@
-﻿namespace Workshop.Tests._01._Fundamentals.Data
+﻿namespace Workshop.Tests._02._Queries.Data
 {
     public readonly struct Pet(PetType type, string name, int age)
     {

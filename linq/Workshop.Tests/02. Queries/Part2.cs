@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using NUnit.Framework;
-using Workshop.Tests._01._Fundamentals.Data;
+using Workshop.Tests._02._Queries.Data;
 
 namespace Workshop.Tests._02._Queries;
 

@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
-using Workshop.Tests._01._Fundamentals.Data;
-using static Workshop.Tests._01._Fundamentals.Data.Persons;
+using Workshop.Tests._02._Queries.Data;
+using static Workshop.Tests._02._Queries.Data.Persons;
 
 namespace Workshop.Tests._02._Queries
 {

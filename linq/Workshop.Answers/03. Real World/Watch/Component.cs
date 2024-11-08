@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Workshop.Tests._03._Real_World.Watch;
+namespace Workshop.Answers._03._Real_World.Watch;
 
 public class Component
 {

@@ -2,11 +2,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using NUnit.Framework;
-using Workshop.Tests._03._Real_World.Watch;
+using Workshop.Answers._03._Real_World.Watch;
 using static System.IO.File;
 using static System.Text.Json.JsonSerializer;
 
-namespace Workshop.Tests._03._Real_World;
+namespace Workshop.Answers._03._Real_World;
 
 public class RealWorld
 {
@@ -25,8 +25,7 @@ public class RealWorld
     public void AllComponents()
     {
         // Count all components in the structure, including nested ones.
-        int totalCount = 0;
-        Assert.AreEqual(564, totalCount);
+        Assert.AreEqual(564, _watch.GetAllComponents().Count());
     }
 
     [Test]
@@ -34,9 +33,8 @@ public class RealWorld
     {
         // Get all components of a specified type.
         // Markers here
-        IEnumerable<Component> markers = null;
-
-        Assert.AreEqual(14, markers.Count());
+        var markers = _watch.GetAllComponentsOfType(ComponentType.Markers).ToList();
+        Assert.AreEqual(14, markers.Count);
         CollectionAssert.AreEquivalent(
             new List<string>
             {
@@ -63,8 +61,7 @@ public class RealWorld
     public void FindAllComponentStartingWith()
     {
         // Retrieve components whose names match a specific pattern (e.g., starts with "Dial" or "Screw").
-        var countDial = 0;
-        Assert.AreEqual(18, countDial);
+        Assert.AreEqual(18, _watch.FindAllComponentStartingWith("Dial").Count());
     }
 
     [Test]
@@ -72,7 +69,8 @@ public class RealWorld
     {
         // Group all components by their type.
         // Count the number of components for each type.
-        Dictionary<ComponentType, int> types = null;
+        var types = _watch.GroupByType()
+            .ToDictionary(g => g.Key, g => g.Value.Count);
 
         Assert.AreEqual(25, types[ComponentType.Oscillator]);
         Assert.AreEqual(18, types[ComponentType.BalanceWheel]);
@@ -83,22 +81,29 @@ public class RealWorld
     public void MostComplex()
     {
         // Identify component with the highest number of direct subcomponents.
-        Component mostComplexComponent = null;
-        var componentsInsideBezel = 0;
+        var mostComplexComponent = _watch.MostComplexComponent();
 
         Assert.AreEqual("Bezel 1", mostComplexComponent.Name);
-        Assert.AreEqual(38, componentsInsideBezel);
+        Assert.AreEqual(38, mostComplexComponent.GetAllComponents().Count());
     }
 
     [Test]
     public void AverageComponentsByType()
     {
         // Calculate the average number of subcomponents for each type of component.
-        // Use an anonymous type with two properties: Type and AverageSubcomponents.
-        Dictionary<Component, int> averageSubcomponentsByType = null;
+        var averageSubcomponentsByType = _watch
+            .GetAllComponents()
+            .GroupBy(c => c.Type)
+            .Select(g => new
+            {
+                Type = g.Key,
+                AverageSubcomponents = g.Average(c => c.Components.Count)
+            }).ToList();
 
-        //Assert.AreEqual(1, averageSubcomponentsByType.Single(t => t.Type == ComponentType.Hand).AverageSubcomponents);
-        //Assert.AreEqual(0.47,averageSubcomponentsByType.Single(t => t.Type == ComponentType.Wheel).AverageSubcomponents, 0.01);
-        //Assert.AreEqual(0.719, averageSubcomponentsByType.Single(t => t.Type == ComponentType.Arbor).AverageSubcomponents, 0.01);
+        Assert.AreEqual(1, averageSubcomponentsByType.Single(t => t.Type == ComponentType.Hand).AverageSubcomponents);
+        Assert.AreEqual(0.47,
+            averageSubcomponentsByType.Single(t => t.Type == ComponentType.Wheel).AverageSubcomponents, 0.01);
+        Assert.AreEqual(0.719,
+            averageSubcomponentsByType.Single(t => t.Type == ComponentType.Arbor).AverageSubcomponents, 0.01);
     }
 }

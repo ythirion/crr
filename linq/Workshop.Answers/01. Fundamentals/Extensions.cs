@@ -9,6 +9,7 @@ public class Extensions
     public void Palindrome()
     {
         Assert.IsTrue("racecar".IsPalindrome());
+        Assert.IsTrue("kayak".IsPalindrome());
         Assert.IsFalse("nein".IsPalindrome());
     }
 

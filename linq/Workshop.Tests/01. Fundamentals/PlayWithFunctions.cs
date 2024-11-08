@@ -1,7 +1,7 @@
 using System;
 using NUnit.Framework;
 
-namespace Workshop.Answers._01._Fundamentals;
+namespace Workshop.Tests._01._Fundamentals;
 
 public class PlayWithFunctions
 {
@@ -15,11 +15,7 @@ public class PlayWithFunctions
         // Create an Add1 function based on Add function
         // Create a Double function based on Multiply
         // Compose the 2 functions together to implement the Add1AndDouble function
-        var Add1 = (int x) => Add(x, 1);
-        var Double = (int x) => Multiply(x, 2);
-        var Add1AndDouble = (int x) => Double(Add1(x));
-
-        Assert.AreEqual(6, Add1AndDouble(2));
+        Assert.AreEqual(6, 5);
     }
 
     [Test]
@@ -27,9 +23,8 @@ public class PlayWithFunctions
     {
         // Implement a function that checks if a number is a binary palindrome
         // Taking a number and a function that converts it to a string
-        Assert.IsTrue(IsPalindrome(9, x => ToBinary(x))); // 9 in binary is 1001, which is a palindrome
-        Assert.IsFalse(IsPalindrome(10, ToBinary)); // 10 in binary is 1010, which is not a palindrome
-    }
 
-    private static bool IsPalindrome(int value, Func<int, string> converter) => converter(value).IsPalindrome();
+        // 9 in binary is 1001, which is a palindrome
+        // 10 in binary is 1010, which is not a palindrome
+    }
 }

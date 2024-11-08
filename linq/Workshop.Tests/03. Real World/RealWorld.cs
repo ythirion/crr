@@ -20,8 +20,16 @@ public class RealWorld
         );
 
     [Test]
-    public void Load()
+    public void CountRecursively() => Assert.AreEqual(565, CountComponentsRecursively(_watch));
+
+    private static int CountComponentsRecursively(Component component)
     {
-        Assert.AreEqual(400, _watch.Components.Count);
+        var count = 1;
+        foreach (var child in component.Components)
+        {
+            count += CountComponentsRecursively(child);
+        }
+
+        return count;
     }
 }

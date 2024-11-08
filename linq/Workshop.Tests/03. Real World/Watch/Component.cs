@@ -11,6 +11,5 @@ public class Component
 
     [JsonConverter(typeof(ComponentTypeConverter))]
     public ComponentType Type { get; set; }
-
     public List<Component> Components { get; set; } = [];
 }

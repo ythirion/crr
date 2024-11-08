@@ -33,5 +33,6 @@ public enum ComponentType
     Links,
     Link,
     Clasp,
-    Pin
+    Pin,
+    Watch
 }

@@ -1,0 +1,444 @@
+{
+  "name": "Yellow Submarine",
+  "id": "SUB-001",
+  "components": [
+    {
+      "name": "Case",
+      "id": "CASE-001",
+      "type": "Case",
+      "components": [
+        {
+          "name": "Case Back",
+          "id": "CB-001",
+          "type": "Cover",
+          "components": [
+            {
+              "name": "Screws",
+              "id": "CB-SC-001",
+              "type": "Screws",
+              "components": [
+                {
+                  "name": "Screw 1",
+                  "id": "CB-SC-001-1",
+                  "type": "Screw"
+                },
+                {
+                  "name": "Screw 2",
+                  "id": "CB-SC-001-2",
+                  "type": "Screw"
+                },
+                {
+                  "name": "Screw 3",
+                  "id": "CB-SC-001-3",
+                  "type": "Screw"
+                },
+                {
+                  "name": "Screw 4",
+                  "id": "CB-SC-001-4",
+                  "type": "Screw"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Bezel",
+          "id": "BEZ-001",
+          "type": "Bezel",
+          "components": [
+            {
+              "name": "Bezel Insert",
+              "id": "BEZ-IN-001",
+              "type": "Insert"
+            },
+            {
+              "name": "Bezel Spring",
+              "id": "BEZ-SP-001",
+              "type": "Spring"
+            },
+            {
+              "name": "Bezel Click Spring",
+              "id": "BEZ-CS-001",
+              "type": "Spring"
+            }
+          ]
+        },
+        {
+          "name": "Crystal",
+          "id": "CRY-001",
+          "type": "Crystal"
+        },
+        {
+          "name": "Gasket",
+          "id": "GASKET-001",
+          "type": "Seal"
+        }
+      ]
+    },
+    {
+      "name": "Movement",
+      "id": "MOV-001",
+      "type": "Movement",
+      "components": [
+        {
+          "name": "Oscillator",
+          "id": "OSC-001",
+          "type": "Oscillator",
+          "components": [
+            {
+              "name": "Balance Wheel",
+              "id": "OSC-BW-001",
+              "type": "Balance Wheel",
+              "components": [
+                {
+                  "name": "Screw 1",
+                  "id": "OSC-BW-SC-001",
+                  "type": "Screw"
+                },
+                {
+                  "name": "Screw 2",
+                  "id": "OSC-BW-SC-002",
+                  "type": "Screw"
+                },
+                {
+                  "name": "Screw 3",
+                  "id": "OSC-BW-SC-003",
+                  "type": "Screw"
+                },
+                {
+                  "name": "Screw 4",
+                  "id": "OSC-BW-SC-004",
+                  "type": "Screw"
+                },
+                {
+                  "name": "Screw 5",
+                  "id": "OSC-BW-SC-005",
+                  "type": "Screw"
+                },
+                {
+                  "name": "Screw 6",
+                  "id": "OSC-BW-SC-006",
+                  "type": "Screw"
+                },
+                {
+                  "name": "Screw 7",
+                  "id": "OSC-BW-SC-007",
+                  "type": "Screw"
+                },
+                {
+                  "name": "Screw 8",
+                  "id": "OSC-BW-SC-008",
+                  "type": "Screw"
+                }
+              ]
+            },
+            {
+              "name": "Hairspring",
+              "id": "OSC-HS-001",
+              "type": "Hairspring"
+            },
+            {
+              "name": "Shock Absorber",
+              "id": "OSC-SA-001",
+              "type": "Shock Absorber",
+              "components": [
+                {
+                  "name": "Jewel",
+                  "id": "OSC-SA-JW-001",
+                  "type": "Jewel"
+                },
+                {
+                  "name": "Spring",
+                  "id": "OSC-SA-SP-001",
+                  "type": "Spring"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Gear Train",
+          "id": "GT-001",
+          "type": "Gear Train",
+          "components": [
+            {
+              "name": "Escape Wheel",
+              "id": "GT-EW-001",
+              "type": "Wheel",
+              "components": [
+                {
+                  "name": "Pinion",
+                  "id": "GT-EW-PN-001",
+                  "type": "Pinion"
+                },
+                {
+                  "name": "Jewels",
+                  "id": "GT-EW-JW-001",
+                  "type": "Jewel"
+                }
+              ]
+            },
+            {
+              "name": "Center Wheel",
+              "id": "GT-CW-001",
+              "type": "Wheel",
+              "components": [
+                {
+                  "name": "Pinion",
+                  "id": "GT-CW-PN-001",
+                  "type": "Pinion"
+                }
+              ]
+            },
+            {
+              "name": "Third Wheel",
+              "id": "GT-TW-001",
+              "type": "Wheel"
+            },
+            {
+              "name": "Fourth Wheel",
+              "id": "GT-FW-001",
+              "type": "Wheel"
+            }
+          ]
+        },
+        {
+          "name": "Mainspring Barrel",
+          "id": "MSB-001",
+          "type": "Barrel",
+          "components": [
+            {
+              "name": "Mainspring",
+              "id": "MSB-MS-001",
+              "type": "Mainspring"
+            },
+            {
+              "name": "Barrel Arbor",
+              "id": "MSB-AR-001",
+              "type": "Arbor"
+            },
+            {
+              "name": "Barrel Cover",
+              "id": "MSB-CV-001",
+              "type": "Cover"
+            }
+          ]
+        },
+        {
+          "name": "Bridge",
+          "id": "BRG-001",
+          "type": "Bridge",
+          "components": [
+            {
+              "name": "Jewel 1",
+              "id": "BRG-JW-001",
+              "type": "Jewel"
+            },
+            {
+              "name": "Jewel 2",
+              "id": "BRG-JW-002",
+              "type": "Jewel"
+            },
+            {
+              "name": "Screw 1",
+              "id": "BRG-SC-001",
+              "type": "Screw"
+            },
+            {
+              "name": "Screw 2",
+              "id": "BRG-SC-002",
+              "type": "Screw"
+            },
+            {
+              "name": "Screw 3",
+              "id": "BRG-SC-003",
+              "type": "Screw"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dial",
+      "id": "DIAL-001",
+      "type": "Dial",
+      "components": [
+        {
+          "name": "Hour Markers",
+          "id": "DIAL-HM-001",
+          "type": "Markers",
+          "components": [
+            {
+              "name": "Marker 1",
+              "id": "DIAL-HM-001-1",
+              "type": "Marker"
+            },
+            {
+              "name": "Marker 2",
+              "id": "DIAL-HM-001-2",
+              "type": "Marker"
+            },
+            {
+              "name": "Marker 3",
+              "id": "DIAL-HM-001-3",
+              "type": "Marker"
+            },
+            {
+              "name": "Marker 4",
+              "id": "DIAL-HM-001-4",
+              "type": "Marker"
+            },
+            {
+              "name": "Marker 5",
+              "id": "DIAL-HM-001-5",
+              "type": "Marker"
+            },
+            {
+              "name": "Marker 6",
+              "id": "DIAL-HM-001-6",
+              "type": "Marker"
+            },
+            {
+              "name": "Marker 7",
+              "id": "DIAL-HM-001-7",
+              "type": "Marker"
+            },
+            {
+              "name": "Marker 8",
+              "id": "DIAL-HM-001-8",
+              "type": "Marker"
+            },
+            {
+              "name": "Marker 9",
+              "id": "DIAL-HM-001-9",
+              "type": "Marker"
+            },
+            {
+              "name": "Marker 10",
+              "id": "DIAL-HM-001-10",
+              "type": "Marker"
+            },
+            {
+              "name": "Marker 11",
+              "id": "DIAL-HM-001-11",
+              "type": "Marker"
+            },
+            {
+              "name": "Marker 12",
+              "id": "DIAL-HM-001-12",
+              "type": "Marker"
+            }
+          ]
+        },
+        {
+          "name": "Hands",
+          "id": "DIAL-HANDS-001",
+          "type": "Hands",
+          "components": [
+            {
+              "name": "Hour Hand",
+              "id": "DIAL-H-001",
+              "type": "Hand"
+            },
+            {
+              "name": "Minute Hand",
+              "id": "DIAL-M-001",
+              "type": "Hand"
+            },
+            {
+              "name": "Second Hand",
+              "id": "DIAL-S-001",
+              "type": "Hand"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Strap",
+      "id": "STRAP-001",
+      "type": "Strap",
+      "components": [
+        {
+          "name": "Links",
+          "id": "LINKS-001",
+          "type": "Links",
+          "components": [
+            {
+              "name": "Link 1",
+              "id": "LINK-001",
+              "type": "Link"
+            },
+            {
+              "name": "Link 2",
+              "id": "LINK-002",
+              "type": "Link"
+            },
+            {
+              "name": "Link 3",
+              "id": "LINK-003",
+              "type": "Link"
+            },
+            {
+              "name": "Link 4",
+              "id": "LINK-004",
+              "type": "Link"
+            },
+            {
+              "name": "Link 5",
+              "id": "LINK-005",
+              "type": "Link"
+            },
+            {
+              "name": "Link 6",
+              "id": "LINK-006",
+              "type": "Link"
+            },
+            {
+              "name": "Link 7",
+              "id": "LINK-007",
+              "type": "Link"
+            },
+            {
+              "name": "Link 8",
+              "id": "LINK-008",
+              "type": "Link"
+            },
+            {
+              "name": "Link 9",
+              "id": "LINK-009",
+              "type": "Link"
+            },
+            {
+              "name": "Link 10",
+              "id": "LINK-010",
+              "type": "Link"
+            }
+          ]
+        },
+        {
+          "name": "Clasp",
+          "id": "CLASP-001",
+          "type": "Clasp",
+          "components": [
+            {
+              "name": "Clasp Spring",
+              "id": "CLASP-SP-001",
+              "type": "Spring"
+            },
+            {
+              "name": "Clasp Cover",
+              "id": "CLASP-CV-001",
+              "type": "Cover"
+            },
+            {
+              "name": "Clasp Pin",
+              "id": "CLASP-PIN-001",
+              "type": "Pin"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
